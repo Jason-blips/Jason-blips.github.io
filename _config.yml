@@ -23,7 +23,7 @@ repository               : "Jason-blips/Jason-blips.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile1.jpg"
   name             : "Zhuoran Fu"
   pronouns         : # example: "she/her"  
   bio              : "Computer Science undergraduate at University of York. Interested in AI, Machine Learning and Data Science."
