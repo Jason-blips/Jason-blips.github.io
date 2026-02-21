@@ -62,9 +62,11 @@ var toggleTheme = () => {
   } else if (current_setting === "dark") {
     new_setting = "system";
   } else {
+    // current_setting is "system" or undefined
     new_setting = "light";
   }
   
+  localStorage.setItem("theme", new_setting);
   setTheme(new_setting);
 };
 
@@ -111,22 +113,31 @@ $(document).ready(function () {
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
   const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
 
-  // If the user hasn't chosen a theme, use system preference
+  // Initialize theme on page load
   const savedTheme = localStorage.getItem("theme");
-  if (!savedTheme || savedTheme === "system") {
-    setTheme("system");
-  } else {
+  if (savedTheme && (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system")) {
     setTheme(savedTheme);
+  } else {
+    // Default to system if no preference saved
+    setTheme("system");
   }
   
   // Listen for system theme changes when in system mode
+  const systemThemeListener = (e) => {
+    const current_setting = determineThemeSetting();
+    if (current_setting === "system") {
+      // Update theme based on system preference change
+      const systemPref = e.matches ? 'dark' : 'light';
+      if (systemPref === "dark") {
+        $("html").attr("data-theme", "dark");
+      } else {
+        $("html").removeAttr("data-theme");
+      }
+    }
+  };
+  
   window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", (e) => {
-          const current_setting = determineThemeSetting();
-          if (current_setting === "system") {
-            setTheme("system");
-          }
-        });
+        .addEventListener("change", systemThemeListener);
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
