@@ -8,9 +8,8 @@ redirect_from:
 ---
 
 <div id="home"></div>
-## Home
 
-Hello! I am **Zhuoran Fu (付卓然)**, you can call me Justin. I am pursuing my Bachelor's degree in Computer Science at the University of York, United Kingdom, specializing in Software & Systems Engineering. I am passionate about software development, machine learning, and data science.
+Hello! I am **Zhuoran Fu**, you can call me Justin. I am pursuing my Bachelor's degree in Computer Science at the University of York, United Kingdom, specializing in Software & Systems Engineering. I am passionate about software development, machine learning, and data science.
 
 I have experience in full-stack web development, game development, and data science. My technical skills span multiple programming languages (Java, Python, C++, JavaScript) and frameworks (React, Vue, Node.js, Flask). I enjoy building practical applications and solving complex problems.
 
@@ -23,7 +22,6 @@ My research interests include:
 * Game Development and Interactive Systems
 
 <div id="achievements"></div>
-## Achievements
 
 ### Academic & Competition Achievements
 
@@ -37,19 +35,7 @@ My research interests include:
 
 _To be updated with additional certifications and achievements._
 
-<div id="portfolio"></div>
-## Portfolio
-
-Here you can find a collection of my projects, work samples, and other portfolio items that showcase my skills and interests.
-
-{% include base_path %}
-
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
-
 <div id="contact"></div>
-## Contact
 
 <style>
 .contact-container {

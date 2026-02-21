@@ -24,7 +24,7 @@ repository               : "Jason-blips/Jason-blips.github.io"
 author:
   # Biographic information
   avatar           : "profile1.jpg"
-  name             : "Zhuoran Fu (付卓然)"
+  name             : "Zhuoran Fu"
   pronouns         : # example: "she/her"  
   bio              : "Computer Science undergraduate at the University of York, specializing in Software & Systems Engineering. Experienced in full-stack development, machine learning, and data science with a focus on building scalable solutions."
   location         : "United Kingdom"
