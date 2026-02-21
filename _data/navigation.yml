@@ -12,10 +12,10 @@ main:
     url: /
     
   - title: "Achievements"
-    url: /#achievements
+    url: /achievements/
     
   - title: "Contact"
-    url: /#contact
+    url: /contact/
     
   - title: "Portfolio"
     url: /portfolio/

@@ -16,7 +16,7 @@ let determineComputedTheme = () => {
   if (themeSetting != "system") {
     return themeSetting;
   }
-  return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 };
 
 // detect OS/browser preference
@@ -27,24 +27,45 @@ let setTheme = (theme) => {
   const use_theme =
     theme ||
     localStorage.getItem("theme") ||
-    $("html").attr("data-theme") ||
-    browserPref;
+    "system";
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+    $("#theme-icon").text("暗");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+    $("#theme-icon").text("明");
+  } else if (use_theme === "system") {
+    // Use system preference
+    const systemPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (systemPref === "dark") {
+      $("html").attr("data-theme", "dark");
+    } else {
+      $("html").removeAttr("data-theme");
+    }
+    $("#theme-icon").text("auto");
+  }
+  
+  // Save theme setting
+  if (use_theme) {
+    localStorage.setItem("theme", use_theme);
   }
 };
 
-// Toggle the theme manually
+// Toggle the theme manually - cycles through: light -> dark -> system -> light
 var toggleTheme = () => {
-  const current_theme = $("html").attr("data-theme");
-  const new_theme = current_theme === "dark" ? "light" : "dark";
-  localStorage.setItem("theme", new_theme);
-  setTheme(new_theme);
+  const current_setting = determineThemeSetting();
+  let new_setting;
+  
+  if (current_setting === "light") {
+    new_setting = "dark";
+  } else if (current_setting === "dark") {
+    new_setting = "system";
+  } else {
+    new_setting = "light";
+  }
+  
+  setTheme(new_setting);
 };
 
 /* ==========================================================================
@@ -90,12 +111,20 @@ $(document).ready(function () {
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
   const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
 
-  // If the user hasn't chosen a theme, follow the OS preference
-  setTheme();
+  // If the user hasn't chosen a theme, use system preference
+  const savedTheme = localStorage.getItem("theme");
+  if (!savedTheme || savedTheme === "system") {
+    setTheme("system");
+  } else {
+    setTheme(savedTheme);
+  }
+  
+  // Listen for system theme changes when in system mode
   window.matchMedia('(prefers-color-scheme: dark)')
         .addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
-            setTheme(e.matches ? "dark" : "light");
+          const current_setting = determineThemeSetting();
+          if (current_setting === "system") {
+            setTheme("system");
           }
         });
 
