@@ -12,7 +12,7 @@ site_theme               : "air" # The available themes options are "default", "
 title                    : "Zhuoran Fu / Academic Portfolio"
 title_separator          : "-"
 name                     : &name "Zhuoran Fu"
-description              : &description "Student at University of York | Academic Portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Computer Science Student at University of York | Software Engineering, Machine Learning & Data Science"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://jason-blips.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "profile1.jpg"
   name             : "Zhuoran Fu"
   pronouns         : # example: "she/her"  
-  bio              : "Student at University of York, United Kingdom."
+  bio              : "Computer Science student at University of York, specializing in Software & Systems Engineering. Passionate about software development, machine learning, and data science."
   location         : "United Kingdom"
   uri              : # URL
   email            : "zxn515@york.ac.uk" 

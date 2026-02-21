@@ -20,8 +20,8 @@
       },
       {
         "network": "LinkedIn",
-        "username": "zhuoran-fu",
-        "url": "https://linkedin.com/in/zhuoran-fu"
+        "username": "zhuoran-fu-932867352",
+        "url": "https://linkedin.com/in/zhuoran-fu-932867352"
       },
       {
         "network": "GitHub",
@@ -76,8 +76,24 @@
       "keywords": ["JUnit"]
     }
   ],
-  "languages": [],
-  "interests": [],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Chinese (Mandarin)",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [
+    "Software Engineering",
+    "Machine Learning",
+    "Data Science",
+    "Web Development",
+    "Game Development",
+    "Algorithm Design"
+  ],
   "references": [],
   "publications": [],
   "presentations": [],
