@@ -13,7 +13,7 @@
 2021:
   - title: "Health Punch"
     description: "COVID-19健康打卡Web应用，用于日常健康状态和位置追踪。使用Vue.js、Element UI、百度地图API和Axios构建。"
-    url: "/portfolio/health-punch/"
+    url: "https://github.com/Jason-blips/health-punch"
 
 2022: []
 
@@ -24,9 +24,9 @@
 2025:
   - title: "Escape University"
     description: "2D校园主题冒险游戏，包含基于瓦片的地图、角色动画、动态光照系统和带路径寻找的AI伙伴。使用Java、libGDX和Gradle构建。"
-    url: "/portfolio/escape-university/"
+    url: "https://github.com/Team-6-ENG/Escape_Uni"
   - title: "QUACK?"
     description: "2D迷宫游戏，采用模块化架构、成就系统（4个独特成就）、基于本地JSON存储的持久化排行榜、事件驱动游戏机制，以及使用JUnit 5和JaCoCo的全面单元测试。"
-    url: "/portfolio/quack/"
+    url: "https://github.com/Team-6-ENG/Escape_Uni"
 
 2026: []

@@ -202,7 +202,11 @@ author_profile: true
             <div class="entry-dot"></div>
             <div class="entry-title">
               {% if entry.url and entry.url != "" %}
-                <a href="{{ base_path }}{{ entry.url }}">{{ entry.title }}</a>
+                {% if entry.url contains "://" %}
+                  <a href="{{ entry.url }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>
+                {% else %}
+                  <a href="{{ base_path }}{{ entry.url }}">{{ entry.title }}</a>
+                {% endif %}
               {% else %}
                 {{ entry.title }}
               {% endif %}
