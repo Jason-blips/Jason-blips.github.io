@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 <div id="home"></div>
+## Biography
 
 Hello! I am **Zhuoran Fu**, you can call me Justin. I am pursuing my Bachelor's degree in Computer Science at the University of York, United Kingdom, specializing in Software & Systems Engineering. I am passionate about software development, machine learning, and data science.
 
