@@ -15,14 +15,11 @@
     description: "COVID-19 health check-in web application for daily health status and location tracking. Built with Vue.js, Element UI, Baidu Maps API, and Axios."
     url: "/portfolio/health-punch/"
 
-2022:
-  # Add more entries for 2022 below:
+2022: []
 
-2023:
-  # Add more entries for 2023 below:
+2023: []
 
-2024:
-  # Add more entries for 2024 below:
+2024: []
 
 2025:
   - title: "Escape University"
@@ -32,5 +29,4 @@
     description: "2D maze-based game with modular architecture, achievement system (4 unique achievements), persistent leaderboard with local JSON storage, event-driven gameplay, and comprehensive unit testing with JUnit 5 and JaCoCo."
     url: "/portfolio/quack/"
 
-2026:
-  # Add more entries for 2026 below:
+2026: []
