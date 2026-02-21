@@ -10,70 +10,11 @@ redirect_from:
 <div id="home"></div>
 ## Home
 
-<style>
-.profile-header {
-  margin: 30px 0 25px 0;
-  padding-bottom: 25px;
-  border-bottom: 2px solid rgba(74, 144, 226, 0.15);
-}
+**Zhuoran Fu (付卓然)**
 
-.profile-name {
-  font-size: 2.2em;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0 0 20px 0;
-  color: #2c3e50;
-  letter-spacing: -0.5px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
+I am a Computer Science undergraduate at the University of York, United Kingdom, with a specialization in Software & Systems Engineering. My academic journey is complemented by hands-on experience in full-stack development, game development, and data science.
 
-.profile-intro {
-  font-size: 1.15em;
-  line-height: 1.75;
-  color: #444;
-  margin: 0 0 18px 0;
-  font-weight: 400;
-}
-
-.profile-intro strong {
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.profile-skills {
-  font-size: 1.05em;
-  line-height: 1.7;
-  color: #555;
-  margin: 0;
-  font-weight: 400;
-}
-
-@media (max-width: 768px) {
-  .profile-name {
-    font-size: 1.8em;
-  }
-  
-  .profile-intro {
-    font-size: 1.05em;
-  }
-  
-  .profile-skills {
-    font-size: 1em;
-  }
-}
-</style>
-
-<div class="profile-header">
-  <div class="profile-name">Zhuoran Fu (付卓然)</div>
-  
-  <p class="profile-intro">
-    I am a <strong>Computer Science undergraduate</strong> at the <strong>University of York</strong>, United Kingdom, with a specialization in <strong>Software & Systems Engineering</strong>. My academic journey is complemented by hands-on experience in full-stack development, game development, and data science.
-  </p>
-  
-  <p class="profile-skills">
-    I am proficient in multiple programming languages (<strong>Java, Python, C++, JavaScript</strong>) and modern frameworks (<strong>React, Vue, Node.js, Flask</strong>), enabling me to build scalable applications and tackle complex technical challenges. My work focuses on creating practical solutions that bridge theoretical knowledge with real-world applications.
-  </p>
-</div>
+I am proficient in multiple programming languages (Java, Python, C++, JavaScript) and modern frameworks (React, Vue, Node.js, Flask), enabling me to build scalable applications and tackle complex technical challenges. My work focuses on creating practical solutions that bridge theoretical knowledge with real-world applications.
 
 ## Research Interests
 
