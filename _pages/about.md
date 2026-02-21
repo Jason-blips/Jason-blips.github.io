@@ -1,17 +1,13 @@
 ---
 permalink: /
-title: "Zhuoran Fu"
+title: "Zhuoran Fu (付卓然)"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Welcome to my academic portfolio! 
-
-I am a Computer Science student at the University of York, United Kingdom, specializing in Software & Systems Engineering. With a GPA of 92/100, I am passionate about software development, machine learning, and data science.
-
-## About Me
+Hello! I am **Zhuoran Fu (付卓然)**, you can call me Justin. I am pursuing my Bachelor's degree in Computer Science at the University of York, United Kingdom, specializing in Software & Systems Engineering. With a GPA of 92/100, I am passionate about software development, machine learning, and data science.
 
 I have experience in full-stack web development, game development, and data science. My technical skills span multiple programming languages (Java, Python, C++, JavaScript) and frameworks (React, Vue, Node.js, Flask). I enjoy building practical applications and solving complex problems.
 

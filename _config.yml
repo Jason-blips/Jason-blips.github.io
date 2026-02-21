@@ -24,7 +24,7 @@ repository               : "Jason-blips/Jason-blips.github.io"
 author:
   # Biographic information
   avatar           : "profile1.jpg"
-  name             : "Zhuoran Fu"
+  name             : "Zhuoran Fu (付卓然)"
   pronouns         : # example: "she/her"  
   bio              : "Computer Science student at University of York, specializing in Software & Systems Engineering. Passionate about software development, machine learning, and data science."
   location         : "United Kingdom"
@@ -143,14 +143,16 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+og_image                 : "images/profile1.jpg"  # Social media default site image
+og_description           : "Computer Science Student at University of York | Software Engineering, Machine Learning & Data Science"  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : "Person"  # Person or Organization (defaults to Person)
+  name                   : "Zhuoran Fu (付卓然)"  # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://github.com/Jason-blips"
+    - "https://linkedin.com/in/zhuoran-fu-932867352"
 
 
 # Analytics
