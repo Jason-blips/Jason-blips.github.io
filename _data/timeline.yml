@@ -3,64 +3,29 @@
 # You can add your projects here by editing the title, description, and url fields
 
 2020:
-  - title: "项目标题 1"
-    description: "项目描述（可选）"
-    url: ""
   # Add more entries for 2020 below:
-  # - title: "项目名称"
-  #   description: "项目描述"
-  #   url: "https://project-url.com"
 
 2021:
-  - title: "Health Punch - COVID-19 Health Check-in Application"
-    description: "开始开发健康打卡Web应用"
-    url: ""
-  # Add more entries for 2021 below:
+  - title: "Health Punch"
+    description: "COVID-19 health check-in web application for daily health status and location tracking. Built with Vue.js, Element UI, Baidu Maps API, and Axios."
+    url: "/portfolio/health-punch/"
 
 2022:
-  - title: "Health Punch - 项目完成"
-    description: "完成Vue.js健康打卡应用开发"
-    url: ""
   # Add more entries for 2022 below:
 
 2023:
-  - title: "项目标题"
-    description: ""
-    url: ""
   # Add more entries for 2023 below:
 
 2024:
-  - title: "开始University of York学习"
-    description: "开始计算机科学本科学习"
-    url: ""
-  - title: "Huawei 2024 UK Tech Arena Programming Competition"
-    description: "进入决赛 (Track 1)"
-    url: ""
   # Add more entries for 2024 below:
 
 2025:
-  - title: "将评论系统从 Gitalk 迁移到 Giscus"
-    description: ""
-    url: ""
-  - title: "给博客添加 FancyBox 支持"
-    description: ""
-    url: ""
-  - title: "30°N 120°E"
-    description: ""
-    url: ""
-  - title: "Escape University - 游戏开发项目"
-    description: "开始开发2D校园冒险游戏"
-    url: ""
-  - title: "Escape University - 项目完成"
-    description: "完成游戏开发，实现动态光照和AI系统"
-    url: ""
-  - title: "QUACK? - 迷宫游戏开发"
-    description: "开始开发2D迷宫游戏"
-    url: ""
-  # Add more entries for 2025 below:
+  - title: "Escape University"
+    description: "2D campus-themed adventure game with tile-based maps, character animations, dynamic lighting system, and AI companion with pathfinding. Built with Java, libGDX, and Gradle."
+    url: "/portfolio/escape-university/"
+  - title: "QUACK?"
+    description: "2D maze-based game with modular architecture, achievement system (4 unique achievements), persistent leaderboard with local JSON storage, event-driven gameplay, and comprehensive unit testing with JUnit 5 and JaCoCo."
+    url: "/portfolio/quack/"
 
 2026:
-  - title: "QUACK? - 项目完成"
-    description: "完成游戏开发，实现成就系统和排行榜"
-    url: ""
   # Add more entries for 2026 below:
