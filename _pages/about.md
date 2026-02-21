@@ -9,9 +9,25 @@ redirect_from:
 
 Welcome to my academic portfolio! 
 
-I am a student at the University of York, United Kingdom. This website showcases my academic work, research interests, publications, talks, teaching experience, and other professional activities.
+I am a Computer Science student at the University of York, United Kingdom, specializing in Software & Systems Engineering. With a GPA of 92/100, I am passionate about software development, machine learning, and data science.
 
-Feel free to explore the different sections to learn more about my work and interests.
+## About Me
+
+I have experience in full-stack web development, game development, and data science. My technical skills span multiple programming languages (Java, Python, C++, JavaScript) and frameworks (React, Vue, Node.js, Flask). I enjoy building practical applications and solving complex problems.
+
+## Achievements
+
+* Finalist, Huawei 2024 UK Tech Arena Programming Competition (Track 1)
+* Top 1000 globally, Kaggle Machine Learning Competition (5+ public competitions)
+* Bronze Medal, Cambridge Chemistry Challenge (C3L6), 2023
+* Gold Medal, Singapore Mathematical Olympiad (SMO), 2022
+* Silver Medal, British Physics Olympiad (BPhO), 2021
+
+## Contact
+
+Feel free to reach out via email at zxn515@york.ac.uk or connect with me on [LinkedIn](https://linkedin.com/in/zhuoran-fu) and [GitHub](https://github.com/Jason-blips).
+
+Explore the different sections to learn more about my projects, publications, and professional activities.
 
 A data-driven personal website
 ======

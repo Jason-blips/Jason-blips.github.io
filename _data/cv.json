@@ -2,9 +2,9 @@
   "basics": {
     "name": "Zhuoran Fu",
     "email": "zxn515@york.ac.uk",
-    "phone": "",
+    "phone": "+44 7421 236069",
     "website": "https://jason-blips.github.io",
-    "summary": "Student at University of York, United Kingdom.",
+    "summary": "Computer Science student at University of York, specializing in Software & Systems Engineering. Passionate about software development, machine learning, and data science.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -19,9 +19,9 @@
         "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
       },
       {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "network": "LinkedIn",
+        "username": "zhuoran-fu",
+        "url": "https://linkedin.com/in/zhuoran-fu"
       },
       {
         "network": "GitHub",
@@ -34,101 +34,75 @@
   "education": [
     {
       "institution": "University of York",
-      "area": "",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "",
-      "gpa": null,
-      "courses": []
+      "area": "Bachelor of Science in Computer Science",
+      "studyType": "Bachelor's Degree",
+      "startDate": "2024-09",
+      "endDate": "2027-07",
+      "gpa": "92/100",
+      "courses": [
+        "Systems and Devices 2: Operating Systems, Security, and Networking",
+        "Systems & Devices 3: Advanced Computer Systems",
+        "Engineering 1: Software & Systems Engineering",
+        "Intelligent Systems: Machine Learning and Optimisation (IMLO)",
+        "DATA: Introduction to Data Science",
+        "Theory 3: Computability, Complexity and Logic"
+      ]
     }
   ],
-  "skills": [],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "",
+      "keywords": ["Java", "Python", "C++", "JavaScript", "SQL (MySQL)"]
+    },
+    {
+      "name": "Web & Backend",
+      "level": "",
+      "keywords": ["React", "Vue", "Node.js", "Flask", "HTML/CSS"]
+    },
+    {
+      "name": "Tools & Platforms",
+      "level": "",
+      "keywords": ["Git", "Docker", "IntelliJ", "VS Code", "PyCharm", "Visual Studio"]
+    },
+    {
+      "name": "Data & ML",
+      "level": "",
+      "keywords": ["pandas", "NumPy", "Matplotlib"]
+    },
+    {
+      "name": "Testing",
+      "level": "",
+      "keywords": ["JUnit"]
+    }
+  ],
   "languages": [],
   "interests": [],
   "references": [],
-  "publications": [
-    {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
-    }
-  ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
-    }
-  ],
+  "publications": [],
+  "presentations": [],
+  "teaching": [],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
+      "name": "Health Punch",
+      "category": "Web Application",
+      "date": "2021-03",
       "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "description": "COVID-19 health check-in web application for daily health status and location tracking. Built with Vue.js, Element UI, Baidu Maps API, and Axios. Features include interactive location selection, responsive UI, RESTful API endpoints, and admin dashboard with advanced filtering."
+    },
+    {
+      "name": "Escape University",
+      "category": "Game Development",
+      "date": "2025-09",
+      "url": "",
+      "description": "2D campus-themed adventure game with tile-based maps, character animations, and interactive collectibles. Implemented dynamic lighting system, AI companion system with pathfinding algorithms, and cross-platform deployment for desktop and web platforms."
+    },
+    {
+      "name": "QUACK?",
+      "category": "Game Development",
+      "date": "2025-11",
+      "url": "",
+      "description": "2D maze-based game with modular multi-screen architecture. Features achievement system, persistent leaderboard with local JSON storage, event-driven gameplay, and automated builds with Gradle and unit testing (JUnit 5) with code coverage reporting."
     }
   ]
 }
