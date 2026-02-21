@@ -1,0 +1,189 @@
+---
+layout: single
+title: "Timeline"
+permalink: /timeline/
+author_profile: true
+---
+
+<style>
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+  z-index: 0;
+}
+
+.timeline-year {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 80px;
+  min-height: 60px;
+}
+
+.year-marker {
+  position: absolute;
+  left: 20px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #4a90e2;
+  z-index: 2;
+  box-shadow: 0 0 0 3px #e0e0e0;
+  transition: transform 0.2s;
+}
+
+.year-marker:hover {
+  transform: scale(1.1);
+}
+
+.year-marker.year-2020 { background: #9b59b6; }
+.year-marker.year-2021 { background: #e74c3c; }
+.year-marker.year-2022 { background: #f39c12; }
+.year-marker.year-2023 { background: #e67e22; }
+.year-marker.year-2024 { background: #e74c3c; }
+.year-marker.year-2025 { background: #27ae60; }
+.year-marker.year-2026 { background: #3498db; }
+
+.year-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #333;
+  padding-top: 2px;
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 18px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.entry-dot {
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #999;
+  z-index: 1;
+  border: 2px solid #fff;
+}
+
+.entry-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.entry-title a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.entry-title a:hover {
+  color: #2c5aa0;
+  text-decoration: underline;
+}
+
+.entry-description {
+  font-size: 14px;
+  color: #777;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.empty-year {
+  padding-left: 0;
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 30px 15px 60px;
+  }
+  
+  .timeline-line {
+    left: 20px;
+  }
+  
+  .timeline-year {
+    padding-left: 60px;
+    margin-bottom: 40px;
+  }
+  
+  .year-marker {
+    left: 10px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .year-title {
+    font-size: 22px;
+  }
+  
+  .entry-dot {
+    left: -8px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  .entry-title {
+    font-size: 15px;
+  }
+}
+</style>
+
+<div class="timeline-container">
+  <div class="timeline-line"></div>
+  
+  {% assign timeline_data = site.data.timeline %}
+  {% assign years = "2026,2025,2024,2023,2022,2021,2020" | split: "," %}
+  
+  {% for year_str in years %}
+    {% assign year = year_str | plus: 0 %}
+    {% assign year_data = timeline_data[year_str] %}
+    
+    <div class="timeline-year">
+      <div class="year-marker year-{{ year_str }}"></div>
+      <div class="year-title">{{ year }}</div>
+      
+      {% if year_data and year_data.size > 0 %}
+        {% for entry in year_data %}
+          <div class="timeline-entry">
+            <div class="entry-dot"></div>
+            <div class="entry-title">
+              {% if entry.url and entry.url != "" %}
+                <a href="{{ entry.url }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>
+              {% else %}
+                {{ entry.title }}
+              {% endif %}
+            </div>
+            {% if entry.description and entry.description != "" %}
+              <div class="entry-description">{{ entry.description }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="empty-year">暂无项目</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
