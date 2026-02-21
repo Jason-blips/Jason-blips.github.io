@@ -10,92 +10,106 @@ author_profile: true
 <style>
 .timeline-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px 80px;
+  padding: 50px 20px 80px;
 }
 
 .timeline-line {
   position: absolute;
-  left: 30px;
+  left: 35px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: #e0e0e0;
+  width: 3px;
+  background: linear-gradient(to bottom, #e0e0e0, #f0f0f0);
   z-index: 0;
+  border-radius: 2px;
 }
 
 .timeline-year {
   position: relative;
-  margin-bottom: 50px;
-  padding-left: 80px;
+  margin-bottom: 60px;
+  padding-left: 90px;
   min-height: 60px;
 }
 
 .year-marker {
   position: absolute;
-  left: 20px;
-  width: 22px;
-  height: 22px;
+  left: 24px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 4px solid #fff;
   background: #4a90e2;
   z-index: 2;
-  box-shadow: 0 0 0 3px #e0e0e0;
-  transition: transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 0 0 4px #f5f5f5;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .year-marker:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 4px #f5f5f5;
 }
 
-.year-marker.year-2020 { background: #9b59b6; }
-.year-marker.year-2021 { background: #e74c3c; }
-.year-marker.year-2022 { background: #f39c12; }
-.year-marker.year-2023 { background: #e67e22; }
-.year-marker.year-2024 { background: #e74c3c; }
-.year-marker.year-2025 { background: #27ae60; }
-.year-marker.year-2026 { background: #3498db; }
+.year-marker.year-2020 { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+.year-marker.year-2021 { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+.year-marker.year-2022 { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+.year-marker.year-2023 { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
+.year-marker.year-2024 { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+.year-marker.year-2025 { background: linear-gradient(135deg, #27ae60 0%, #229954 100%); }
+.year-marker.year-2026 { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
 
 .year-title {
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
   padding-top: 2px;
+  letter-spacing: -0.5px;
 }
 
 .timeline-entry {
   position: relative;
-  margin-bottom: 18px;
-  padding-left: 20px;
-  padding-bottom: 5px;
+  margin-bottom: 24px;
+  padding-left: 24px;
+  padding-bottom: 8px;
+  transition: transform 0.2s ease;
+}
+
+.timeline-entry:hover {
+  transform: translateX(4px);
 }
 
 .entry-dot {
   position: absolute;
-  left: -10px;
-  top: 10px;
-  width: 8px;
-  height: 8px;
+  left: -12px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #999;
+  background: #4a90e2;
   z-index: 1;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .entry-title {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
+  font-size: 17px;
+  color: #2c3e50;
+  margin-bottom: 8px;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 .entry-title a {
   color: #4a90e2;
   text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .entry-title a:hover {
@@ -103,11 +117,25 @@ author_profile: true
   text-decoration: underline;
 }
 
+.entry-title a::after {
+  content: "→";
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateX(-4px);
+}
+
+.entry-title a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .entry-description {
   font-size: 14px;
-  color: #777;
-  margin-top: 4px;
-  line-height: 1.4;
+  color: #666;
+  margin-top: 6px;
+  line-height: 1.6;
+  padding-left: 4px;
 }
 
 .empty-year {
@@ -115,6 +143,7 @@ author_profile: true
   color: #999;
   font-style: italic;
   font-size: 14px;
+  padding: 10px 0;
 }
 
 @media (max-width: 768px) {

@@ -3,11 +3,11 @@
 # You can add your projects here by editing the title, description, and url fields
 
 2020:
-  - title: "Anime Wallpaper Web Scraper"
-    description: "Batch web scraper for anime and cartoon wallpapers. Automated image collection and organization system."
+  - title: "Anime Wallpaper Batch Scraper"
+    description: "Developed an automated web scraping tool for batch downloading anime and cartoon wallpapers. Implemented intelligent image collection, categorization, and local storage management system."
     url: ""
   - title: "Web Novel Batch Downloader"
-    description: "Automated tool for batch downloading online serial novels. Efficient content extraction and organization system."
+    description: "Built an automated tool for batch downloading online serial novels. Designed efficient content extraction algorithms and organized downloaded content with structured file management."
     url: ""
 
 2021:
