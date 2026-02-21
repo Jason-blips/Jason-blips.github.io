@@ -2,86 +2,44 @@
    Various functions that we want to use within the template
    ========================================================================== */
 
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
+// Determine the expected state of the theme toggle, which can be "dark" or "light".
+// Default is "light".
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
-  return (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
+  return (themeSetting != "dark" && themeSetting != "light") ? "light" : themeSetting;
 };
 
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
+// Determine the computed theme, which can be "dark" or "light".
 let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting != "system") {
-    return themeSetting;
-  }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return determineThemeSetting();
 };
-
-// detect OS/browser preference
-const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
 // Set the theme on page load or when explicitly called
 let setTheme = (theme) => {
   const use_theme =
     theme ||
     localStorage.getItem("theme") ||
-    "system";
+    "light";
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").text("dark");
-  } else if (use_theme === "light") {
+    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+  } else {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").text("light");
-  } else if (use_theme === "system") {
-    // Use system preference
-    const systemPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    if (systemPref === "dark") {
-      $("html").attr("data-theme", "dark");
-    } else {
-      $("html").removeAttr("data-theme");
-    }
-    $("#theme-icon").text("auto");
+    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
   }
   
   // Save theme setting
   if (use_theme) {
     localStorage.setItem("theme", use_theme);
   }
-  
-  // Update dropdown active state if function exists
-  if (typeof updateThemeDropdown === 'function') {
-    setTimeout(updateThemeDropdown, 0);
-  }
 };
 
-// Set theme from dropdown selection
-var selectTheme = (theme) => {
-  if (theme === "light" || theme === "dark" || theme === "system") {
-    setTheme(theme);
-    updateThemeDropdown();
-    closeThemeDropdown();
-  }
-};
-
-// Update dropdown active state
-var updateThemeDropdown = () => {
-  const current_setting = determineThemeSetting();
-  $(".theme-option").removeClass("active");
-  $(`.theme-option[data-theme="${current_setting}"]`).addClass("active");
-};
-
-// Toggle dropdown menu
-var toggleThemeDropdown = () => {
-  const $menu = $("#theme-dropdown-menu");
-  $menu.toggle();
-};
-
-// Close dropdown menu
-var closeThemeDropdown = () => {
-  $("#theme-dropdown-menu").hide();
+// Toggle theme between light and dark
+var toggleTheme = () => {
+  const currentTheme = determineThemeSetting();
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  setTheme(newTheme);
 };
 
 /* ==========================================================================
@@ -129,53 +87,18 @@ $(document).ready(function () {
 
   // Initialize theme on page load
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme && (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system")) {
+  if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
     setTheme(savedTheme);
   } else {
-    // Default to system if no preference saved
-    setTheme("system");
+    // Default to light if no preference saved
+    setTheme("light");
   }
-  
-  // Listen for system theme changes when in system mode
-  const systemThemeListener = (e) => {
-    const current_setting = determineThemeSetting();
-    if (current_setting === "system") {
-      // Update theme based on system preference change
-      const systemPref = e.matches ? 'dark' : 'light';
-      if (systemPref === "dark") {
-        $("html").attr("data-theme", "dark");
-      } else {
-        $("html").removeAttr("data-theme");
-      }
-    }
-  };
-  
-  window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", systemThemeListener);
 
-  // Enable the theme dropdown
+  // Enable the theme toggle
   $('#theme-toggle-link').on('click', function(e) {
     e.preventDefault();
-    e.stopPropagation();
-    toggleThemeDropdown();
+    toggleTheme();
   });
-  
-  // Handle theme option clicks
-  $('.theme-option').on('click', function(e) {
-    e.preventDefault();
-    const theme = $(this).data('theme');
-    selectTheme(theme);
-  });
-  
-  // Close dropdown when clicking outside
-  $(document).on('click', function(e) {
-    if (!$(e.target).closest('#theme-toggle').length) {
-      closeThemeDropdown();
-    }
-  });
-  
-  // Update dropdown active state on page load
-  updateThemeDropdown();
 
   // Enable the sticky footer
   var bumpIt = function () {

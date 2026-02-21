@@ -1,59 +1,5 @@
 {% include base_path %}
 
-<style>
-.theme-dropdown {
-  position: relative;
-}
-
-.theme-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: var(--global-bg-color);
-  border: 1px solid var(--global-border-color);
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  list-style: none;
-  margin: 5px 0 0 0;
-  padding: 4px 0;
-  min-width: 130px;
-  z-index: 1000;
-  font-size: 14px;
-}
-
-.theme-dropdown-menu li {
-  margin: 0;
-  padding: 0;
-}
-
-.theme-dropdown-menu .theme-option {
-  display: flex;
-  align-items: center;
-  padding: 10px 16px;
-  color: var(--global-text-color);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.theme-dropdown-menu .theme-option:hover {
-  background-color: var(--global-border-color);
-}
-
-.theme-dropdown-menu .theme-option.active {
-  background-color: var(--global-border-color);
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .theme-dropdown-menu {
-    right: auto;
-    left: 0;
-  }
-}
-</style>
-
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
@@ -73,17 +19,10 @@
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail theme-dropdown">
-            <a role="button" id="theme-toggle-link" title="Theme: light / dark / auto" style="cursor: pointer; position: relative;">
-              <i class="fas fa-palette" style="margin-right: 5px;"></i>
-              <span id="theme-icon">auto</span>
-              <i class="fas fa-chevron-down" style="margin-left: 5px; font-size: 0.8em;"></i>
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a role="button" id="theme-toggle-link" title="Toggle theme" style="cursor: pointer;">
+              <i id="theme-icon" class="fas fa-sun"></i>
             </a>
-            <ul id="theme-dropdown-menu" class="theme-dropdown-menu" style="display: none;">
-              <li><a href="#" data-theme="light" class="theme-option"><i class="fas fa-sun" style="margin-right: 8px;"></i>light</a></li>
-              <li><a href="#" data-theme="dark" class="theme-option"><i class="fas fa-moon" style="margin-right: 8px;"></i>dark</a></li>
-              <li><a href="#" data-theme="system" class="theme-option"><i class="fas fa-adjust" style="margin-right: 8px;"></i>auto</a></li>
-            </ul>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
