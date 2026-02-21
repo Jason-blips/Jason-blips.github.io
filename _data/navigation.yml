@@ -9,13 +9,13 @@
 
 main:
   - title: "Home"
-    url: /
+    url: /#home
     
   - title: "Achievements"
-    url: /achievements/
+    url: /#achievements
     
   - title: "Contact"
-    url: /contact/
+    url: /#contact
     
   - title: "Portfolio"
     url: /portfolio/
