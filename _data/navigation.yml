@@ -20,9 +20,6 @@ main:
   - title: "Portfolio"
     url: /portfolio/
     
-  - title: "CV"
-    url: /cv/
-    
   - title: "Timeline"
     url: /timeline/
     
