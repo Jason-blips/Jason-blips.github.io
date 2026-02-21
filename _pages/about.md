@@ -10,11 +10,9 @@ redirect_from:
 <div id="home"></div>
 ## Home
 
-**Zhuoran Fu (付卓然)**
+Hello! I am **Zhuoran Fu (付卓然)**, you can call me Justin. I am pursuing my Bachelor's degree in Computer Science at the University of York, United Kingdom, specializing in Software & Systems Engineering. I am passionate about software development, machine learning, and data science.
 
-I am a Computer Science undergraduate at the University of York, United Kingdom, with a specialization in Software & Systems Engineering. My academic journey is complemented by hands-on experience in full-stack development, game development, and data science.
-
-I am proficient in multiple programming languages (Java, Python, C++, JavaScript) and modern frameworks (React, Vue, Node.js, Flask), enabling me to build scalable applications and tackle complex technical challenges. My work focuses on creating practical solutions that bridge theoretical knowledge with real-world applications.
+I have experience in full-stack web development, game development, and data science. My technical skills span multiple programming languages (Java, Python, C++, JavaScript) and frameworks (React, Vue, Node.js, Flask). I enjoy building practical applications and solving complex problems.
 
 ## Research Interests
 
