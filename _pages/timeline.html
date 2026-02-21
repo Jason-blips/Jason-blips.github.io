@@ -190,7 +190,7 @@ author_profile: true
   
   {% for year_str in years %}
     {% assign year = year_str | plus: 0 %}
-    {% assign year_data = timeline_data[year_str] %}
+    {% assign year_data = timeline_data[year] %}
     
     <div class="timeline-year">
       <div class="year-marker year-{{ year_str }}"></div>
@@ -213,7 +213,7 @@ author_profile: true
           </div>
         {% endfor %}
       {% else %}
-        <div class="empty-year">暂无项目</div>
+        <!-- 该年度暂无项目 -->
       {% endif %}
     </div>
   {% endfor %}
