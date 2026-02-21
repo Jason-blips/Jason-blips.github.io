@@ -37,6 +37,17 @@ My research interests include:
 
 _To be updated with additional certifications and achievements._
 
+<div id="portfolio"></div>
+## Portfolio
+
+Here you can find a collection of my projects, work samples, and other portfolio items that showcase my skills and interests.
+
+{% include base_path %}
+
+{% for post in site.portfolio %}
+  {% include archive-single.html %}
+{% endfor %}
+
 <div id="contact"></div>
 ## Contact
 
