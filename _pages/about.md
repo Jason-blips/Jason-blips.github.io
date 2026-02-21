@@ -7,9 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my academic portfolio! I am a student at the University of York, United Kingdom.
+Welcome to my academic portfolio! 
 
-This website showcases my academic work, including publications, talks, teaching experience, and other professional activities.
+I am a student at the University of York, United Kingdom. This website showcases my academic work, research interests, publications, talks, teaching experience, and other professional activities.
+
+Feel free to explore the different sections to learn more about my work and interests.
 
 A data-driven personal website
 ======
