@@ -31,10 +31,10 @@ let setTheme = (theme) => {
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").text("暗");
+    $("#theme-icon").text("dark");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").text("明");
+    $("#theme-icon").text("light");
   } else if (use_theme === "system") {
     // Use system preference
     const systemPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -50,24 +50,38 @@ let setTheme = (theme) => {
   if (use_theme) {
     localStorage.setItem("theme", use_theme);
   }
+  
+  // Update dropdown active state if function exists
+  if (typeof updateThemeDropdown === 'function') {
+    setTimeout(updateThemeDropdown, 0);
+  }
 };
 
-// Toggle the theme manually - cycles through: light -> dark -> system -> light
-var toggleTheme = () => {
-  const current_setting = determineThemeSetting();
-  let new_setting;
-  
-  if (current_setting === "light") {
-    new_setting = "dark";
-  } else if (current_setting === "dark") {
-    new_setting = "system";
-  } else {
-    // current_setting is "system" or undefined
-    new_setting = "light";
+// Set theme from dropdown selection
+var selectTheme = (theme) => {
+  if (theme === "light" || theme === "dark" || theme === "system") {
+    setTheme(theme);
+    updateThemeDropdown();
+    closeThemeDropdown();
   }
-  
-  localStorage.setItem("theme", new_setting);
-  setTheme(new_setting);
+};
+
+// Update dropdown active state
+var updateThemeDropdown = () => {
+  const current_setting = determineThemeSetting();
+  $(".theme-option").removeClass("active");
+  $(`.theme-option[data-theme="${current_setting}"]`).addClass("active");
+};
+
+// Toggle dropdown menu
+var toggleThemeDropdown = () => {
+  const $menu = $("#theme-dropdown-menu");
+  $menu.toggle();
+};
+
+// Close dropdown menu
+var closeThemeDropdown = () => {
+  $("#theme-dropdown-menu").hide();
 };
 
 /* ==========================================================================
@@ -139,8 +153,29 @@ $(document).ready(function () {
   window.matchMedia('(prefers-color-scheme: dark)')
         .addEventListener("change", systemThemeListener);
 
-  // Enable the theme toggle
-  $('#theme-toggle').on('click', toggleTheme);
+  // Enable the theme dropdown
+  $('#theme-toggle-link').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleThemeDropdown();
+  });
+  
+  // Handle theme option clicks
+  $('.theme-option').on('click', function(e) {
+    e.preventDefault();
+    const theme = $(this).data('theme');
+    selectTheme(theme);
+  });
+  
+  // Close dropdown when clicking outside
+  $(document).on('click', function(e) {
+    if (!$(e.target).closest('#theme-toggle').length) {
+      closeThemeDropdown();
+    }
+  });
+  
+  // Update dropdown active state on page load
+  updateThemeDropdown();
 
   // Enable the sticky footer
   var bumpIt = function () {
