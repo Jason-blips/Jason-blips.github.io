@@ -2,31 +2,31 @@
 # Format: Each entry has title, description (optional), and url (optional)
 # You can add your projects here by editing the title, description, and url fields
 
-2020:
-  - title: "Anime Wallpaper Batch Scraper"
-    description: "Developed an automated web scraping tool for batch downloading anime and cartoon wallpapers. Implemented intelligent image collection, categorization, and local storage management system."
+"2020":
+  - title: "动漫壁纸批量爬虫"
+    description: "开发了自动化网页爬虫工具，用于批量下载动漫和卡通壁纸。实现了智能图片收集、分类和本地存储管理系统。"
     url: ""
-  - title: "Web Novel Batch Downloader"
-    description: "Built an automated tool for batch downloading online serial novels. Designed efficient content extraction algorithms and organized downloaded content with structured file management."
+  - title: "网络小说批量下载器"
+    description: "构建了自动化工具用于批量下载网络连载小说。设计了高效的内容提取算法，并采用结构化文件管理组织下载内容。"
     url: ""
 
-2021:
+"2021":
   - title: "Health Punch"
-    description: "COVID-19 health check-in web application for daily health status and location tracking. Built with Vue.js, Element UI, Baidu Maps API, and Axios."
+    description: "COVID-19健康打卡Web应用，用于日常健康状态和位置追踪。使用Vue.js、Element UI、百度地图API和Axios构建。"
     url: "/portfolio/health-punch/"
 
-2022: []
+"2022": []
 
-2023: []
+"2023": []
 
-2024: []
+"2024": []
 
-2025:
+"2025":
   - title: "Escape University"
-    description: "2D campus-themed adventure game with tile-based maps, character animations, dynamic lighting system, and AI companion with pathfinding. Built with Java, libGDX, and Gradle."
+    description: "2D校园主题冒险游戏，包含基于瓦片的地图、角色动画、动态光照系统和带路径寻找的AI伙伴。使用Java、libGDX和Gradle构建。"
     url: "/portfolio/escape-university/"
   - title: "QUACK?"
-    description: "2D maze-based game with modular architecture, achievement system (4 unique achievements), persistent leaderboard with local JSON storage, event-driven gameplay, and comprehensive unit testing with JUnit 5 and JaCoCo."
+    description: "2D迷宫游戏，采用模块化架构、成就系统（4个独特成就）、基于本地JSON存储的持久化排行榜、事件驱动游戏机制，以及使用JUnit 5和JaCoCo的全面单元测试。"
     url: "/portfolio/quack/"
 
-2026: []
+"2026": []
