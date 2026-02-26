@@ -1,14 +1,9 @@
-{% if site.url %}
-  {% if site.url contains "://" %}
-    {% comment %}Use relative path to avoid CORS and Mixed Content issues{% endcomment %}
-    {% assign base_path = site.baseurl %}
-  {% else %}
-    {% assign base_path = site.url | append: site.baseurl %}
-  {% endif %}
+{% comment %}
+  Always use relative paths to avoid CORS and Mixed Content issues.
+  This ensures resources load correctly regardless of the domain.
+{% endcomment %}
+{% if site.baseurl %}
+  {% assign base_path = site.baseurl %}
 {% else %}
-  {% if site.github.url %}
-    {% assign base_path = site.baseurl %}
-  {% else %}
-    {% assign base_path = site.baseurl %}
-  {% endif %}
+  {% assign base_path = "" %}
 {% endif %}

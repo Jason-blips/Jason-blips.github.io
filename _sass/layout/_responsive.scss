@@ -122,12 +122,19 @@
     overflow: visible;
   }
 
-  /* Ensure title doesn't break */
-  .masthead__menu-item--lg a {
+  /* Ensure title doesn't break - aggressive fixes */
+  .masthead__menu-item--lg {
     white-space: nowrap !important;
-    word-break: keep-all !important;
-    overflow-wrap: normal !important;
-    hyphens: none !important;
+    text-wrap: nowrap !important;
+    
+    a {
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      overflow-wrap: normal !important;
+      hyphens: none !important;
+      display: inline-block !important;
+      max-width: 100% !important;
+    }
   }
 
   .greedy-nav {
@@ -148,27 +155,31 @@
         padding: 0.25em 0;
 
         &.masthead__menu-item--lg {
-          padding-right: 0.3em;
-          font-size: 0.75rem;
+          padding-right: 0.25em;
+          font-size: 0.7rem;
           flex: 1 1 auto;
           min-width: 0;
           max-width: none;
           overflow: visible;
-          white-space: nowrap;
+          white-space: nowrap !important;
+          text-wrap: nowrap !important;
 
           a {
             white-space: nowrap !important;
             overflow: visible !important;
             text-overflow: clip !important;
             margin: 0;
-            padding: 0.2em 0;
+            padding: 0.15em 0;
             display: inline-block;
-            line-height: 1.1;
+            line-height: 1.0;
             word-break: keep-all !important;
             overflow-wrap: normal !important;
             hyphens: none !important;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             font-weight: 600;
+            font-size: 0.7rem !important;
+            max-width: 100%;
+            box-sizing: border-box;
           }
         }
 
@@ -226,19 +237,26 @@
       
       li.masthead__menu-item--lg {
         max-width: none;
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         flex: 1 1 auto;
         min-width: 0;
         overflow: visible;
+        white-space: nowrap !important;
+        text-wrap: nowrap !important;
+        transform: scale(0.92);
+        transform-origin: left center;
 
         a {
           white-space: nowrap !important;
           overflow: visible !important;
           text-overflow: clip !important;
-          font-size: 0.75rem;
-          line-height: 1.2;
-          word-break: keep-all;
-          letter-spacing: -0.02em;
+          font-size: 0.6rem !important;
+          line-height: 1.0;
+          word-break: keep-all !important;
+          overflow-wrap: normal !important;
+          letter-spacing: -0.05em;
+          padding: 0.1em 0;
+          max-width: 100%;
         }
       }
 
