@@ -24,6 +24,11 @@ layout: default
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
     <div class="page__inner-wrap">
+      {% if page.url == "/" %}
+        <div class="profile-hero--mobile">
+          {% include author-profile-hero.html %}
+        </div>
+      {% endif %}
       {% unless page.header.overlay_color or page.header.overlay_image or page.url == "/" %}
         <header>
           {% if page.title %}
