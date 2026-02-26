@@ -1,5 +1,14 @@
 {% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
+  {% if site.url contains "://" %}
+    {% comment %}Use relative path to avoid CORS and Mixed Content issues{% endcomment %}
+    {% assign base_path = site.baseurl %}
+  {% else %}
+    {% assign base_path = site.url | append: site.baseurl %}
+  {% endif %}
 {% else %}
-  {% assign base_path = site.github.url %}
+  {% if site.github.url %}
+    {% assign base_path = site.baseurl %}
+  {% else %}
+    {% assign base_path = site.baseurl %}
+  {% endif %}
 {% endif %}
