@@ -15,49 +15,64 @@
   }
 
   body {
-    padding-top: 60px; /* Adjust for smaller masthead */
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-top: 55px; /* Adjust for smaller masthead */
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  /* Force sidebar to display below content on very small screens */
+  /* Hide sidebar completely on mobile */
   .sidebar {
-    display: block !important;
-    order: 2; /* Display after main content if using flexbox */
-    margin-top: 2em;
-    margin-bottom: 1em;
+    display: none !important;
   }
 
-  /* Ensure main content comes first */
+  /* Ensure main content takes full width */
   #main {
-    display: flex;
-    flex-direction: column;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .page {
-    order: 1; /* Display before sidebar */
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  /* Headings */
+  /* Headings - More refined typography */
   h1 {
     font-size: 1.75rem;
-    margin-top: 0.5em;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+    font-weight: 700;
   }
 
   h2 {
     font-size: 1.5rem;
-    margin-top: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    line-height: 1.4;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--global-border-color);
   }
 
   h3 {
     font-size: 1.25rem;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+    font-weight: 600;
   }
 
-  /* Paragraphs */
+  /* Paragraphs - Better readability */
   p {
     font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1em;
+    line-height: 1.7;
+    margin-bottom: 1.25em;
+    color: var(--global-text-color);
   }
 
   /* Lists */
@@ -65,11 +80,11 @@
     padding-left: 1.25em;
   }
 
-  /* Main content area */
+  /* Main content area - Enhanced spacing */
   #main {
-    margin-top: 1em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    margin-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
     width: 100% !important;
     max-width: 100% !important;
   }
@@ -81,6 +96,10 @@
     max-width: 100% !important;
     float: none !important;
     margin: 0 !important;
+  }
+
+  .page__content {
+    padding: 0;
   }
 
   .page__content {
@@ -129,8 +148,8 @@
         padding: 0.25em 0;
 
         &.masthead__menu-item--lg {
-          padding-right: 0.5em;
-          font-size: 0.85rem;
+          padding-right: 0.3em;
+          font-size: 0.75rem;
           flex: 1 1 auto;
           min-width: 0;
           max-width: none;
@@ -142,13 +161,14 @@
             overflow: visible !important;
             text-overflow: clip !important;
             margin: 0;
-            padding: 0.25em 0;
+            padding: 0.2em 0;
             display: inline-block;
-            line-height: 1.2;
+            line-height: 1.1;
             word-break: keep-all !important;
             overflow-wrap: normal !important;
             hyphens: none !important;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
+            font-weight: 600;
           }
         }
 
@@ -241,33 +261,38 @@
 
 /* Extra small devices - ensure title fits */
 @media screen and (max-width: 360px) {
+  .masthead {
+    min-height: 48px;
+  }
+
   .masthead__inner-wrap {
     padding: 0.4em 0.5em;
   }
 
   .greedy-nav {
     .visible-links {
-      gap: 0.3em;
+      gap: 0.25em;
       
       li.masthead__menu-item--lg {
-        font-size: 0.7rem;
-        padding-right: 0.3em;
+        font-size: 0.65rem;
+        padding-right: 0.25em;
         flex: 1 1 auto;
         
         a {
-          font-size: 0.7rem;
-          padding: 0.25em 0;
-          letter-spacing: -0.03em;
+          font-size: 0.65rem;
+          padding: 0.2em 0;
+          letter-spacing: -0.04em;
           white-space: nowrap !important;
+          line-height: 1.1;
         }
       }
 
       #theme-toggle {
-        flex: 0 0 28px;
-        min-width: 28px;
+        flex: 0 0 26px;
+        min-width: 26px;
         
         a {
-          padding: 0.3em 0.4em;
+          padding: 0.25em 0.35em;
         }
       }
     }
@@ -282,28 +307,37 @@
 
 /* Very small devices (iPhone SE, etc.) */
 @media screen and (max-width: 320px) {
+  .masthead {
+    min-height: 46px;
+  }
+
   .masthead__inner-wrap {
     padding: 0.35em 0.4em;
   }
 
   .greedy-nav {
     .visible-links {
-      gap: 0.25em;
+      gap: 0.2em;
       
       li.masthead__menu-item--lg {
-        font-size: 0.65rem;
-        padding-right: 0.25em;
+        font-size: 0.6rem;
+        padding-right: 0.2em;
         
         a {
-          font-size: 0.65rem;
-          padding: 0.2em 0;
-          letter-spacing: -0.04em;
+          font-size: 0.6rem;
+          padding: 0.15em 0;
+          letter-spacing: -0.05em;
+          line-height: 1.1;
         }
       }
 
       #theme-toggle {
-        flex: 0 0 26px;
-        min-width: 26px;
+        flex: 0 0 24px;
+        min-width: 24px;
+        
+        a {
+          padding: 0.2em 0.3em;
+        }
       }
     }
 
@@ -320,6 +354,11 @@
    ========================================================================== */
 
 @media screen and (max-width: 1023px) {
+  /* Hide sidebar on mobile for cleaner layout */
+  .sidebar {
+    display: none !important;
+  }
+
   /* Force flexbox layout for proper ordering */
   #main {
     display: flex !important;
@@ -327,27 +366,8 @@
     width: 100% !important;
     max-width: 100% !important;
     clear: both !important;
+    margin-top: 1em;
   }
-
-  .sidebar {
-    position: relative !important;
-    height: auto !important;
-    margin-bottom: 2em;
-    padding-top: 0 !important;
-    overflow: visible !important;
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    max-width: 100% !important;
-    order: 2 !important; /* Display after main content */
-    margin-top: 2em;
-    /* Override any span() mixins */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
 
     .author__avatar {
       display: block;
@@ -688,15 +708,20 @@
    ========================================================================== */
 
 @media screen and (max-width: 768px) {
-  /* Ensure full width layout with flexbox */
+  /* Hide sidebar on mobile */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* Ensure full width layout */
   #main {
-    display: flex !important;
-    flex-direction: column !important;
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
+    padding-left: 1em;
+    padding-right: 1em;
     clear: both !important;
+    margin-top: 0.75em;
   }
 
   .page {
@@ -705,51 +730,61 @@
     float: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    order: 1 !important;
-    flex: 1 1 auto !important;
-  }
-
-  .sidebar {
-    width: 100% !important;
-    float: none !important;
-    position: relative !important;
-    margin-bottom: 1.5em;
-    margin-top: 2em;
-    order: 2 !important;
-    flex: 0 0 auto !important;
-    clear: both !important;
   }
 
   .page__title {
     font-size: 1.75rem;
-    line-height: 1.2;
+    line-height: 1.3;
+    margin-bottom: 0.75em;
+    font-weight: 700;
   }
 
   .page__lead {
     font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    color: var(--global-text-color-light);
   }
 
   .page__content {
     h2 {
       font-size: 1.5rem;
-      padding-bottom: 0.4em;
-      margin-top: 1.5em;
+      padding-bottom: 0.5em;
+      margin-top: 2em;
+      margin-bottom: 1em;
+      border-bottom: 2px solid var(--global-border-color);
+      font-weight: 600;
     }
 
     h3 {
       font-size: 1.25rem;
-      margin-top: 1.25em;
+      margin-top: 1.5em;
+      margin-bottom: 0.75em;
+      font-weight: 600;
     }
 
     p, li {
       font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin-left: 1.5em;
+      margin-bottom: 1.25em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
     }
 
     blockquote {
-      margin: 1.5em 0.5em;
-      padding-left: 0.75em;
-      padding-right: 0.75em;
+      margin: 1.5em 0;
+      padding: 1em 1.25em;
+      border-left: 4px solid var(--global-border-color);
+      background: var(--global-border-color);
+      border-radius: 4px;
       font-size: 0.9rem;
+      font-style: italic;
     }
   }
 }
@@ -757,24 +792,37 @@
 @media screen and (max-width: 599px) {
   .page__title {
     font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
   }
 
   .page__lead {
     font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25em;
   }
 
   .page__content {
     h2 {
       font-size: 1.35rem;
-      margin-top: 1.25em;
+      margin-top: 1.75em;
+      margin-bottom: 0.75em;
+      padding-bottom: 0.4em;
     }
 
     h3 {
       font-size: 1.15rem;
+      margin-top: 1.25em;
+      margin-bottom: 0.5em;
     }
 
     p, li {
       font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin-left: 1.25em;
     }
   }
 }
