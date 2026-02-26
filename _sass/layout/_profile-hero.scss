@@ -5,16 +5,22 @@
 .profile-hero {
   text-align: center;
   margin-bottom: 1em;
-  padding: 0 1em;
+  padding: 1.25em 1em;
+  border-radius: 16px;
+  background: var(--global-hero-bg, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--global-border-color, rgba(255, 255, 255, 0.06));
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
+/* 头像：青绿描边 */
 .profile-hero__avatar {
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.25rem;
   width: 140px;
   height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #2dd4bf;
+  border: 2px solid #2b8a88;
+  box-shadow: 0 4px 16px rgba(43, 138, 136, 0.2);
 
   img {
     width: 100%;
@@ -26,49 +32,52 @@
 .profile-hero__name {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 0.75rem;
-  line-height: 1.3;
+  margin: 0 0 0.875rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   color: var(--global-text-color, #fff);
 }
 
 .profile-hero__affiliations {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 1.25rem;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
   font-size: 0.95rem;
+  line-height: 1.5;
   align-items: center;
 }
 
-/* 专业：浅青绿色，无下划线 */
+/* 专业：浅青绿/teal（与截图一致），无下划线 */
 .profile-hero__affiliation--major {
-  color: #2dd4bf;
+  color: #56b6c2;
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #5eead4;
+    color: #7ed4de;
   }
 }
 
-/* 学校、导师：浅蓝色，无下划线 */
+/* 学校、导师：浅蓝色（与截图 #61AFEF 一致），无下划线 */
 .profile-hero__affiliation--link {
-  color: #64b5f6;
+  color: #61afef;
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #90caf9;
+    color: #89c4f6;
   }
 }
 
 .profile-hero__icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.875rem;
   flex-wrap: wrap;
 }
 
+/* 社交图标：亮蓝圆底白字（与截图一致） */
 .profile-hero__icon {
   display: inline-flex;
   align-items: center;
@@ -76,13 +85,13 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #4a90e2;
+  background: #61afef;
   color: #fff;
   text-decoration: none;
   transition: background 0.2s, transform 0.2s;
 
   &:hover {
-    background: #3a7bc8;
+    background: #89c4f6;
     transform: translateY(-2px);
   }
 
@@ -91,30 +100,49 @@
   }
 }
 
-/* Biography 区块整体上移：首页无 header 时主内容顶格 */
+/* Biography 右栏：阅读舒适、层次清晰 */
 .home-page .page__content {
   margin-top: 0;
-  padding-top: 0.5em;
+  padding-top: 0.25rem;
 
   h2:first-child {
     margin-top: 0;
+    padding-bottom: 0.6em;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
-  /* Biography 内超链接：适配浅色、无下划线（按示例效果） */
+  h2:not(:first-child) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    line-height: 1.65;
+  }
+
+  /* Biography 内超链接：浅色、无下划线 */
   a {
-    color: var(--global-text-color-light, #64b5f6);
+    color: var(--global-text-color-light, #61afef);
     text-decoration: none !important;
     transition: color 0.2s ease;
 
     &:hover {
-      color: var(--global-link-color-hover, #90caf9);
+      color: var(--global-link-color-hover, #89c4f6);
       text-decoration: none !important;
     }
   }
 }
 
 /* ==========================================================================
-   首页 Hero 统一 flex 布局：移动端顶部居中，桌面端左侧
+   首页两栏布局：桌面端左栏 = hero，右栏 = Biography
+   移动端：单栏，hero 顶部居中，下方 Biography
    ========================================================================== */
 
 .main--home {
@@ -122,12 +150,13 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
+  gap: 0;
 
   .hero-flex {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     flex-shrink: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
   }
 
   .page {
@@ -136,20 +165,31 @@
   }
 }
 
+/* 桌面端：左栏 hero 卡片，右栏 biography */
 @media screen and (min-width: 1024px) {
   .main--home {
     flex-direction: row;
     align-items: flex-start;
+    gap: 0;
   }
 
+  /* 左栏：固定宽度，卡片式、留白舒适 */
   .main--home .hero-flex {
-    flex: 0 0 260px;
-    max-width: none;
-    width: 260px;
+    flex: 0 0 300px;
+    max-width: 300px;
+    width: 300px;
     margin-bottom: 0;
-    margin-right: 2rem;
+    margin-right: 2.5rem;
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--global-border-color, rgba(255, 255, 255, 0.08));
   }
 
+  .main--home .hero-flex .profile-hero {
+    padding: 1.75em 1.25em;
+    border-radius: 20px;
+  }
+
+  /* 右栏：Biography，限制最大行宽便于阅读 */
   .main--home .page {
     flex: 1 1 0;
     min-width: 0;
@@ -159,6 +199,10 @@
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+
+  .main--home .page .page__inner-wrap {
+    max-width: 52em;
   }
 }
 
@@ -173,7 +217,7 @@
   }
 
   .profile-hero__name {
-    font-size: 1.6rem;
+    font-size: 2em;
   }
 
   .profile-hero__affiliations {
