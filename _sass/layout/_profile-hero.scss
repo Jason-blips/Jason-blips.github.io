@@ -44,7 +44,13 @@
 }
 
 .profile-hero__affiliation--link {
-  color: #4a90e2;
+  color: #64b5f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #90caf9;
+  }
 }
 
 .profile-hero__icons {
@@ -84,49 +90,66 @@
   h2:first-child {
     margin-top: 0;
   }
-}
 
-/* 移动端：主内容区显示 hero（侧栏在移动端被隐藏） */
-.profile-hero--mobile {
-  display: block;
-  margin-bottom: 1.5rem;
-}
+  /* Biography 内超链接：适配浅色、无下划线 */
+  a {
+    color: var(--global-text-color-light, #94a3b8);
+    text-decoration: none;
+    transition: color 0.2s ease;
 
-@media screen and (min-width: 1024px) {
-  .profile-hero--mobile {
-    display: none !important; /* 桌面端只显示侧栏里的 hero */
+    &:hover {
+      color: var(--global-link-color-hover, #cbd5e1);
+    }
   }
 }
 
-/* 在侧栏内显示时的紧凑样式 */
-.sidebar .profile-hero {
-  padding: 0;
-  margin-bottom: 1.5rem;
+/* ==========================================================================
+   首页 Hero 统一 flex 布局：移动端顶部居中，桌面端左侧
+   ========================================================================== */
+
+.main--home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  .hero-flex {
+    width: 100%;
+    max-width: 320px;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .page {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
-.sidebar .profile-hero__avatar {
-  width: 120px;
-  height: 120px;
-  margin-left: auto;
-  margin-right: auto;
-}
+@media screen and (min-width: 1024px) {
+  .main--home {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
-.sidebar .profile-hero__name {
-  font-size: 1.25rem;
-}
+  .main--home .hero-flex {
+    flex: 0 0 260px;
+    max-width: none;
+    width: 260px;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
 
-.sidebar .profile-hero__affiliations {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.sidebar .profile-hero__icons {
-  gap: 0.75rem;
-}
-
-.sidebar .profile-hero__icon {
-  width: 40px;
-  height: 40px;
+  .main--home .page {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 @media screen and (min-width: 1024px) {
