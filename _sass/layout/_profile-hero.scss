@@ -91,14 +91,15 @@
     margin-top: 0;
   }
 
-  /* Biography 内超链接：适配浅色、无下划线 */
+  /* Biography 内超链接：适配浅色、无下划线（按示例效果） */
   a {
-    color: var(--global-text-color-light, #94a3b8);
-    text-decoration: none;
+    color: var(--global-text-color-light, #64b5f6);
+    text-decoration: none !important;
     transition: color 0.2s ease;
 
     &:hover {
-      color: var(--global-link-color-hover, #cbd5e1);
+      color: var(--global-link-color-hover, #90caf9);
+      text-decoration: none !important;
     }
   }
 }
