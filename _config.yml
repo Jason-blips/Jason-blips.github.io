@@ -163,8 +163,8 @@ analytics:
 
 
 # Reading Files
+# 已移除 .htaccess（项目内无此文件，且 GitHub Pages 不使用 Apache）
 include:
-  - .htaccess
   - _pages
   - files
 exclude:
