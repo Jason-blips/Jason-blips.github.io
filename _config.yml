@@ -155,9 +155,9 @@ social:
     - "https://linkedin.com/in/zhuoran-fu-932867352"
 
 
-# Analytics
+# Analytics（false 关闭，或填 "google" / "google-universal" / "google-analytics-4" / "custom"）
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               : false
   google:
     tracking_id          :
 
@@ -182,16 +182,23 @@ exclude:
   - Capfile
   - config
   - Dockerfile
+  - FIX_RESOURCE_PATHS.md
   - Gemfile
   - Gruntfile.js
   - gulpfile.js
   - LICENSE
   - local
   - log
+  - markdown_generator
   - node_modules
   - package.json*
   - Rakefile
   - README
+  - README.md
+  - talkmap
+  - talkmap.ipynb
+  - talkmap_out.ipynb
+  - talkmap.py
   - tmp
   - vendor
 keep_files:
@@ -355,9 +362,12 @@ tag_archive:
 #     tag: /tags/:name/
 
 
-# HTML Compression
+# HTML Compression（与 _layouts/compress.html 配合，避免缺键导致构建异常）
 # - https://jch.penibelst.de/
 compress_html:
   clippings: all
+  endings: all
+  startings: all
+  comments: all
   ignore:
     envs: development
