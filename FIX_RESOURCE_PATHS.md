@@ -4,7 +4,9 @@
 控制台显示 Mixed Content 和 CORS 错误，因为资源使用了绝对 URL（`http://jiangluo.uk/`）而不是相对路径。
 
 ## 已完成的修复
-已修改 `_includes/base_path` 使其始终返回相对路径。
+1. **`_includes/base_path`**：已修改为始终返回相对路径（空或 `site.baseurl`），资源链接不再使用绝对 URL，避免 CORS 与混合内容。
+2. **`_config.yml`**：已将 `url` 改为 `https://jiangluo.uk`（与 CNAME 一致），保证 canonical/OG 等使用 HTTPS 且与自定义域名一致。
+3. **社交分享与评论**：`_includes/social-share.html` 与 `_includes/comments.html` 中分享/评论用的链接已改为使用 `site.url` 的绝对 URL，分享与评论插件可正常工作。
 
 ## 必须执行的步骤
 
