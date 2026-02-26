@@ -186,16 +186,7 @@ _To be updated with additional certifications and achievements._
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* Responsive styles are now handled in _sass/layout/_responsive.scss */
 </style>
 
 <div class="contact-container">
