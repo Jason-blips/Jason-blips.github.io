@@ -174,7 +174,7 @@ $hero-space-xl: 1.5rem;
 /* 移动端：hero 与正文之间的留白统一 */
 .main--home .hero-flex {
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
   flex-shrink: 0;
   margin-bottom: 1.5rem;
 }
@@ -191,10 +191,11 @@ $hero-space-xl: 1.5rem;
     align-items: flex-start;
   }
 
+  /* 左栏加宽：保证 “Bachelor's degree in Computer Science” 一行显示 */
   .main--home .hero-flex {
-    flex: 0 0 340px;
-    max-width: 340px;
-    width: 340px;
+    flex: 0 0 380px;
+    max-width: 380px;
+    width: 380px;
     margin-bottom: 0;
     margin-right: 2rem;
     padding-right: 1.5rem;
