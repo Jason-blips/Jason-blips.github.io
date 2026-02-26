@@ -5,7 +5,7 @@
 .profile-hero {
   text-align: center;
   margin-bottom: 1em;
-  padding: 1.25em 1em;
+  padding: 1.5em 1.25em;
   border-radius: 16px;
   background: var(--global-hero-bg, rgba(255, 255, 255, 0.03));
   border: 1px solid var(--global-border-color, rgba(255, 255, 255, 0.06));
@@ -14,9 +14,9 @@
 
 /* 头像：青绿描边 */
 .profile-hero__avatar {
-  margin: 0 auto 1.25rem;
-  width: 140px;
-  height: 140px;
+  margin: 0 auto 1rem;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #2b8a88;
@@ -29,41 +29,56 @@
   }
 }
 
+/* 姓名：仅英文名，小号、优雅 */
 .profile-hero__name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 0 0.875rem;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-  color: var(--global-text-color, #fff);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--global-text-color, #e2e8f0);
+  font-family: var(--global-font-family);
 }
 
 .profile-hero__affiliations {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.4rem;
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   align-items: center;
+  text-align: center;
 }
 
-/* 专业：浅青绿/teal（与截图一致），无下划线 */
+/* 专业：一行显示，浅青绿，无下划线 */
 .profile-hero__affiliation--major {
   color: #56b6c2;
   text-decoration: none;
   transition: color 0.2s ease;
+
+  &.profile-hero__affiliation--oneline {
+    white-space: nowrap;
+    font-size: 0.875em;
+  }
 
   &:hover {
     color: #7ed4de;
   }
 }
 
-/* 学校、导师：浅蓝色（与截图 #61AFEF 一致），无下划线 */
+@media screen and (max-width: 380px) {
+  .profile-hero__affiliation--oneline {
+    white-space: normal;
+  }
+}
+
+/* 学校、导师：浅蓝，无下划线 */
 .profile-hero__affiliation--link {
   color: #61afef;
   text-decoration: none;
   transition: color 0.2s ease;
+  font-size: 0.95em;
 
   &:hover {
     color: #89c4f6;
@@ -208,20 +223,26 @@
 
 @media screen and (min-width: 1024px) {
   .profile-hero {
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
 
   .profile-hero__avatar {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1.1rem;
   }
 
   .profile-hero__name {
-    font-size: 2em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
   }
 
   .profile-hero__affiliations {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    gap: 0.45rem;
+    margin-bottom: 1.4rem;
   }
 
   .sidebar .profile-hero__avatar {
