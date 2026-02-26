@@ -12,7 +12,9 @@ redirect_from:
 
 Hello! I am **Zhuoran Fu**, you can call me Justin. I am pursuing my Bachelor's degree in Computer Science at the University of York, United Kingdom, specializing in Software & Systems Engineering. I am passionate about software development, machine learning, and data science.
 
-I have experience in full-stack web development, game development, and data science. My technical skills span multiple programming languages (Java, Python, C++, JavaScript) and frameworks (React, Vue, Node.js, Flask). I enjoy building practical applications and solving complex problems.
+I am currently a Research Intern under the supervision of Dr. Pengcheng Liu, Associate Professor in the Department of Computer Science at the University of York. His group works on robotics, machine learning, applied control, and bio-inspiration & biomimetics—including underactuated robotic systems, neural network–based tracking control, bio-inspired trajectory planning and control, and related topics at the intersection of control engineering and AI.
+
+I have hands-on experience in **full-stack web development**, **game development**, and **data science**. I work with languages such as Java, Python, C++, and JavaScript; front-end and backend frameworks including React, Vue, Node.js, and Flask; and tools like Git, Docker, and common ML/data stacks (e.g. pandas, NumPy). I also developed [**Accounting Helper**](https://app.jiangluo.uk), an Android app for personal finance, with a web version available at the same link. I enjoy turning ideas into working systems and tackling problems end-to-end.
 
 ## Research Interests
 
