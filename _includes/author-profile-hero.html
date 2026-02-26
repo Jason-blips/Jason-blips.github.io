@@ -9,27 +9,26 @@
       <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="{{ author.name }}" />
     {% endif %}
   </div>
-  <h1 class="profile-hero__name">{{ author.name }}</h1>
-  {% if author.bio %}
-    <p class="profile-hero__bio">{{ author.bio }}</p>
-  {% endif %}
-  <ul class="profile-hero__links">
-    {% if author.location %}
-      <li><i class="fas fa-map-marker-alt profile-hero__link-icon"></i><span>{{ author.location }}</span></li>
-    {% endif %}
+  <h1 class="profile-hero__name">{{ author.name }} | 付卓然</h1>
+  <div class="profile-hero__affiliations">
+    <span class="profile-hero__affiliation">Bachelor's degree in Computer Science</span>
+    <span class="profile-hero__affiliation profile-hero__affiliation--link">University of York</span>
+    <span class="profile-hero__affiliation profile-hero__affiliation--link">Research Intern under Dr. Pengcheng Liu</span>
+  </div>
+  <div class="profile-hero__icons">
     {% if author.email %}
-      <li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope profile-hero__link-icon"></i>Email</a></li>
+      <a href="mailto:{{ author.email }}" class="profile-hero__icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
     {% endif %}
     {% if author.github %}
-      <li><a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github profile-hero__link-icon"></i>GitHub</a></li>
-    {% endif %}
-    {% if author.kaggle %}
-      <li><a href="https://www.kaggle.com/{{ author.kaggle }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-kaggle profile-hero__link-icon"></i>Kaggle</a></li>
+      <a href="https://github.com/{{ author.github }}" class="profile-hero__icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
     {% endif %}
     {% if author.linkedin %}
-      <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in profile-hero__link-icon"></i>LinkedIn</a></li>
+      <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="profile-hero__icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
     {% endif %}
-  </ul>
+    {% if author.kaggle %}
+      <a href="https://www.kaggle.com/{{ author.kaggle }}" class="profile-hero__icon" aria-label="Kaggle" target="_blank" rel="noopener noreferrer"><i class="fab fa-kaggle"></i></a>
+    {% endif %}
+  </div>
 </div>
 
 <style>
@@ -58,43 +57,45 @@
   line-height: 1.3;
   color: var(--global-text-color, #2c3e50);
 }
-.profile-hero__bio {
-  text-align: left;
-  max-width: 560px;
-  margin: 0 auto 1.25rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--global-text-color, #2c3e50);
-}
-.profile-hero__links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  max-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.profile-hero__links li {
-  margin-bottom: 0.5rem;
+.profile-hero__affiliations {
   display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+.profile-hero__affiliation {
+  color: #0d9488;
+}
+.profile-hero__affiliation--link {
+  color: #4a90e2;
+}
+.profile-hero__icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.profile-hero__icon {
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-}
-.profile-hero__links a,
-.profile-hero__links span {
-  color: var(--global-text-color, #2c3e50);
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #4a90e2;
+  color: #fff;
   text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
 }
-.profile-hero__links a:hover {
-  color: var(--global-link-color-hover, #4a90e2);
+.profile-hero__icon:hover {
+  background: #3a7bc8;
+  transform: translateY(-2px);
 }
-.profile-hero__link-icon {
-  width: 1.1em;
-  color: var(--global-text-color-light, #666);
-  flex-shrink: 0;
+.profile-hero__icon i {
+  font-size: 1.1rem;
 }
-/* Biography 区块整体上移：缩小与 hero 的间距 */
+/* Biography 区块整体上移 */
 .page__inner-wrap > header + section.page__content {
   margin-top: 0;
   padding-top: 0.5em;
@@ -107,11 +108,14 @@
     margin-bottom: 1em;
   }
   .profile-hero__avatar {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
   }
   .profile-hero__name {
-    font-size: 1.35rem;
+    font-size: 1.6rem;
+  }
+  .profile-hero__affiliations {
+    font-size: 1rem;
   }
 }
 </style>

@@ -139,8 +139,20 @@
 
   .greedy-nav {
     min-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 
+    button {
+      position: static !important;
+      right: auto !important;
+      flex-shrink: 0;
+      order: 1;
+    }
     .visible-links {
+      order: 2;
+      flex: 1;
+      min-width: 0;
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
@@ -191,9 +203,11 @@
         }
       }
 
+      .masthead__menu-item--right {
+        margin-left: auto;
+      }
       #theme-toggle {
         flex: 0 0 auto;
-        margin-left: auto;
 
         a {
           padding: 0.4em 0.6em;
@@ -260,8 +274,8 @@
         }
       }
 
-      li:not(.masthead__menu-item--lg):not(#theme-toggle) {
-        display: none; /* Hide menu items on very small screens, show in hamburger */
+      li:not(.masthead__menu-item--lg):not(#theme-toggle):not(.masthead__menu-item--right) {
+        display: none; /* Hide nav links on very small screens; keep title, search, theme */
       }
 
       a {
